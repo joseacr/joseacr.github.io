@@ -1,13 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JARVIS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>J.A.R.V.I.S. Interface</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>JARVIS ONLINE</h1>
+
+<body> 
+    <div class="scanlines"></div>
+
+    <div id="boot-overlay" class="boot-overlay">
+        <div class="boot-text" id="boot-text"></div>
+    </div>
+
+    <main id="hud-container" class="hud-container hidden">
+        <header class="hud-header">
+            <h1 class="glitch-text">J.A.R.V.I.S.</h1>
+            <p class="subtitle">Just A Rather Very Intelligent System</p>
+        </header>
+
+        <section class="reactor-section">
+            <div class="arc-reactor">
+                <svg class="reactor-ring ring-outer" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="90" fill="none" stroke="#00d4ff" stroke-width="2" stroke-dasharray="15 10" />
+</svg>
+<svg class="reactor-ring ring-middle" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="70" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="8 6" />
+</svg>
+<svg class="reactor-ring ring-inner" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="50" fill="none" stroke="#00d4ff" stroke-width="1" stroke-dasharray="4 4" />
+</svg>
+                <div class="avatar-container">
+                    <img id="avatar" class="avatar" src="" alt="GitHub Avatar">
+                </div>
+            </div>
+        </section>
+        <section class="panels-grid">
+            <div class="hud-panel panel-profile" id="panel-profile">
+                <div class="panel-header">PROFILE</div>
+                <div class="panel-content">
+                    <h2 id="user-name"></h2>
+                    <p id="user-bio"></p>
+                    <a id="user-link" href="" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                </div>
+            </div>
+
+            <div class="hud-panel panel-stats" id="panel-stats">
+                <div class="panel-header">SYSTEM STATS</div>
+                <div class="panel-content stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-value" id="stat-repos">0</span>
+                        <span class="stat-label">Repositories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="stat-followers">0</span>
+                        <span class="stat-label">Followers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="stat-following">0</span>
+                        <span class="stat-label">Following</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hud-panel panel-repos" id="panel-repos">
+                <div class="panel-header">RECENT PROJECTS</div>
+                <div class="panel-content">
+                    <ul id="repo-list" class="repo-list"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <script src="script.js"></script>
 </body>
+
 </html>
